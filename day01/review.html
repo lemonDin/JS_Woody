@@ -1,12 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    dcdc
-</body>
+  </head>
+  <body>
+    <button onclick="call()">电话银行</button>
+    <script>
+      console.log("1000", 100, 3.1, { a: 1 }, [1, 2]);
+
+      //   let prom = prompt("输入数值");
+      /* prom < 20
+        ? alert("小于20")
+        : prom < 30
+        ? alert("小于30")
+        : alert("小于50"); */
+
+      function call() {
+        var input = prompt("请输入按键"); //prompt返回字符串
+        console.log(typeof input);
+        console.log(input);
+        switch (input) {
+          case "1":
+            alert("正在取款中");
+            break;
+          case "2":
+            alert("转帐中");
+            break;
+          default:
+            alert("按键无效");
+        }
+      }
+
+      let res = console.log("hello");
+      console.log("res:", res);
+
+      console.info("这是Info");
+      console.warn("这是warn");
+      console.error("这是error");
+      console.debug("这是debug");
+
+      //   格式化打印
+      /**
+       * %o object
+       * %d decimal
+       * %s string
+       * %f float
+       * */
+
+      console.log("%o is a object", { name: "zhangsan" });
+      console.log("%d is a number", 12);
+      console.log("%s is a string", "hello");
+      console.log("hello" + " is a string");
+      console.log("%f is a float", 3.14);
+
+      console.log("但使%s飞将在，不教%s度阴山", "龙城", "胡马");
+      const arr = ["张三", "李四"];
+      arr.forEach((item, index) => {
+        console.log("索引值:" + index + " 对应的值是：" + item);
+      });
+
+      console.log(
+        "%cHello world",
+        "color:red;background:pink;border-radius:50%;padding:10px"
+      );
+
+      // An highlighted block
+      var languages = {
+        csharp: { name: "C#", paradigm: "object-oriented" },
+        fsharp: { name: "F#", paradigm: "functional" },
+      };
+
+      console.table(languages);
+
+      console.table({ a: 1, b: 2, c: 3 });
+      console.table([
+        [1, 2, 3],
+        [3, "sjdj"],
+      ]);
+
+      //打印分组/缩进
+      console.group("一级标题");
+      console.log(1000);
+      console.log(2000);
+      console.group("二级标题");
+      console.log(1000);
+      console.log(2000);
+      console.groupEnd(); //关闭二级标题分组
+      console.log(1000);
+      console.groupEnd(); //关闭一级标题分组
+      console.log(2000);
+
+      function a() {
+        console.trace();
+      }
+
+      function b() {
+        a();
+      }
+
+      b();
+    </script>
+  </body>
 </html>
